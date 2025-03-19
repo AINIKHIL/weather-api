@@ -1,0 +1,100 @@
+<?php
+// Start the session if needed
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script1.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <main class="main-container">
+        <header class="input-container">
+            <input class="city-input" placeholder="Search City" type="text" aria-label="Enter city name">
+            <button class="search-btn" aria-label="Search for city">
+                <span class="material-symbols-outlined">search</span>
+            </button>
+        </header>
+
+        <section class="loading section-message" style="display: none;">
+            <img src="assets/message/loading.png">
+            <div>
+                <h1>Loading...</h1>
+                <h4 class="regular-txt">Fetching weather information.</h4>
+            </div>
+        </section>
+
+        <section class="weather-info" style="display: none;">
+            <div class="weather-container">
+                <div class="weather-header">
+                    <div class="location">
+                        <span class="material-symbols-outlined">location_on</span>
+                        <h4 class="city-name"></h4>
+                        <h4 class="country-code"></h4>
+                    </div>
+                    <h5 class="current-date"></h5>
+                </div>
+
+                <div class="weather-data">
+                    <div class="current-weather">
+                        <img src="" alt="weather icon" class="weather-icon">
+                        <div class="weather-details">
+                            <h1 class="temperature"></h1>
+                            <h3 class="description"></h3>
+                        </div>
+                    </div>
+                    <div class="weather-stats">
+                        <div class="stat-item">
+                            <span class="material-symbols-outlined">water_drop</span>
+                            <div class="stat-info">
+                                <h5>Humidity</h5>
+                                <h5 class="humidity"></h5>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="material-symbols-outlined">air</span>
+                            <div class="stat-info">
+                                <h5>Wind Speed</h5>
+                                <h5 class="wind-speed"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="refresh-container" style="text-align: center; margin-top: 20px;">
+                    <button class="refresh-btn">
+                        <span class="material-symbols-outlined">refresh</span> Refresh Data
+                    </button>
+                </div>
+
+                <div class="forecast">
+                    <h3>5-Day Forecast</h3>
+                    <div class="forecast-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="search-city section-message">
+            <img src="assets/message/search-city.png">
+            <div>
+                <h1>Search City</h1>
+                <h4 class="regular-txt">Find out the weather conditions of the city.</h4>
+            </div>
+        </section>
+
+        <section class="not-found section-message" style="display: none;">
+            <img src="assets/message/not-found.png">
+            <div>
+                <h1>Not Found</h1>
+                <h4 class="regular-txt">The city you are looking for cannot be found.</h4>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
